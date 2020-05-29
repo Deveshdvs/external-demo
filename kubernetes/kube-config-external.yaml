@@ -22,7 +22,7 @@ spec:
         - name: PORT
           value: "80"
         - name: SERVER
-          value: "http://events-data-service"
+          value: "http://events-data-service:8082"
         ports:
         - containerPort: 80
           name: "events-port"
@@ -49,7 +49,7 @@ spec:
   ports: 
      -  port: 80
         protocol: TCP
-        targetPort: 80
+        targetPort: 8080
   selector: 
     app: events-web
   type: LoadBalancer
