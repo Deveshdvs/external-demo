@@ -17,14 +17,14 @@ spec:
     spec:
       containers:
       - name: events-web
-        image: praveenyv585/external-image:v1.0.0
+        image: gcr.io/dtc-user13/external-image:v1.0.1
         env:
         - name: PORT
-          value: "80"
+          value: "8082"
         - name: SERVER
           value: "http://events-data-service:8082"
         ports:
-        - containerPort: 80
+        - containerPort: 8080
           name: "events-port"
         resources:
           requests:
@@ -36,7 +36,7 @@ spec:
         livenessProbe:
           httpGet:
             path: /
-            port: 80
+            port: 8080
           initialDelaySeconds: 60
           periodSeconds: 60
 
